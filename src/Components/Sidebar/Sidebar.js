@@ -22,7 +22,7 @@ const Sidebar = () => {
       <div className='menu'>
         {SidebarData.map((item, index) => {
           return (
-            <div className='menuItem'>
+            <div className='menuItem active'>
               <item.icon />
               <span>
                 {item.heading}
