@@ -3,7 +3,10 @@ import logo from "../../assets/images/logo.png"
 import './Sidebar.css'
 import { UilEstate } from "@iconscout/react-unicons"
 
-import { SidebarData } from '../../Data/Data'
+import { SidebarData } from '../../Data/Data';
+import {AiOutlineExclamationCircle} from "react-icons/ai";
+
+
 const Sidebar = () => {
   return (
     <div className='Sidebar'>
@@ -27,6 +30,10 @@ const Sidebar = () => {
             </div>
           )
         })}
+
+        <div className='menuItem'>
+          <AiOutlineExclamationCircle/>
+        </div>
       </div>
 
     </div>
