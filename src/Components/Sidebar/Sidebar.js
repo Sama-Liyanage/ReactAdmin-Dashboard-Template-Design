@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from "../../assets/images/logo.png"
 import './Sidebar.css'
 import { UilEstate } from "@iconscout/react-unicons"
 
 import { SidebarData } from '../../Data/Data';
-import {AiOutlineExclamationCircle} from "react-icons/ai";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
 
 
 const Sidebar = () => {
+
+  const [selected, setSelected] = useState(0)
+
   return (
     <div className='Sidebar'>
       {/* logo */}
@@ -22,7 +25,11 @@ const Sidebar = () => {
       <div className='menu'>
         {SidebarData.map((item, index) => {
           return (
-            <div className='menuItem active'>
+            <div className={selected===index?'menuItem active':'menuItem'}
+              key={index}
+              onClick={()=>setSelected(index)}
+            >
+
               <item.icon />
               <span>
                 {item.heading}
@@ -32,7 +39,7 @@ const Sidebar = () => {
         })}
 
         <div className='menuItem'>
-          <AiOutlineExclamationCircle/>
+          <AiOutlineExclamationCircle />
         </div>
       </div>
 
