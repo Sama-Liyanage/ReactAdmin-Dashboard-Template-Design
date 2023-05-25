@@ -1,7 +1,8 @@
 // Sidebar imports
 import { AiOutlineDashboard, AiOutlineShoppingCart, AiOutlineAreaChart} from "react-icons/ai";
 import { MdOutlinePeopleAlt } from "react-icons/md";
-import { BsBoxes,BsChatSquareText } from "react-icons/bs";
+import { BsBoxes} from "react-icons/bs";
+import { FcSalesPerformance,FcRules,FcMoneyTransfer} from "react-icons/fc";
 
 
 // Sidebar Data
@@ -37,7 +38,7 @@ export const CardsData=[
         },
         barValue:70,
         value:"25,970",
-        png:BsChatSquareText,
+        png:FcSalesPerformance,
         series:[
             {
                 name:"Sales",
@@ -53,7 +54,7 @@ export const CardsData=[
         },
         barValue:80,
         value:"14,270",
-        // png:UilMoneyWithdrawal,
+        png:FcRules,
         series:[
             {
                 name:"Revenue",
@@ -69,7 +70,7 @@ export const CardsData=[
         },
         barValue:60,
         value:"4,270",
-        // png:BsChatSquareText,
+        png:FcMoneyTransfer,
         series:[
             {
                 name:"Expenses",
