@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AnimateSharedLayout } from 'framer-motion'
+import {motion, AnimateSharedLayout } from 'framer-motion'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { UilTimes } from "@iconscout/react-unicons";
@@ -24,11 +24,12 @@ const Card = (props) => {
 function CompactCard({ param, setExpanded }) {
   const Png = param.png;
   return (
-    <div className='CompactCard'
+    <motion.div className='CompactCard'
       style={{
         background: param.color.background,
         boxShadow: param.color.boxShadow
       }}
+      layoutId="expandableCard"
       onClick={setExpanded}
     >
       <div className='radialBar'>
@@ -43,7 +44,7 @@ function CompactCard({ param, setExpanded }) {
         <span>${param.value}</span>
         <span>Last 24 hours</span>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
@@ -100,24 +101,25 @@ function ExpandedCard({ param, setExpanded }) {
     },
   };
   return (
-    <div
-    className="ExpandedCard"
-    style={{
-      background: param.color.background,
-      boxShadow: param.color.boxShadow,
-    }}
-    layoutId="expandableCard"
-  >
-    <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}>
-      <UilTimes onClick={setExpanded} />
-    </div>
+    <motion.div
+      className="ExpandedCard"
+      style={{
+        background: param.color.background,
+        boxShadow: param.color.boxShadow,
+      }}
+      layoutId="expandableCard"
+    >
+      <div style={{ alignSelf: "flex-end", cursor: "pointer", color: "white" }}>
+        <UilTimes onClick={setExpanded}
+        />
+      </div>
       <span>{param.title}</span>
-    <div className="chartContainer">
-      <Chart options={data.options} series={param.series} type="area" />
-    </div>
-    <span>Last 24 hours</span>
-  </div>
-);
+      <div className="chartContainer">
+        <Chart options={data.options} series={param.series} type="area" />
+      </div>
+      <span>Last 24 hours</span>
+    </motion.div>
+  );
 }
 
 export default Card
