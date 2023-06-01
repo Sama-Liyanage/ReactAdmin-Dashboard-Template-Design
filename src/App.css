@@ -36,3 +36,11 @@
   gap: 10px;
   /* first column having a width of 11rem, the second column taking up the remaining space in the grid container, and the third column having a width of 20rem */
 }
+
+
+@media screen and (max-width: 1200px) {
+  .AppGlass{
+    grid-template-columns: 10% 50% auto;
+    overflow-y: scroll;
+  } 
+}
