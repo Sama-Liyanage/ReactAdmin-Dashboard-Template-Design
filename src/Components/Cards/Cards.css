@@ -16,3 +16,10 @@
       height: 9rem;
     }
   }
+
+  @media screen and (max-width: 768px)
+{
+  .Cards{
+    width: 90%;
+  }
+}
