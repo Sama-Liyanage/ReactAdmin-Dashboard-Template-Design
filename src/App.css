@@ -33,5 +33,6 @@
   background-color: var(--glass);
   overflow: hidden;
   grid-template-columns: 11rem auto 20rem;
+  gap: 10px;
   /* first column having a width of 11rem, the second column taking up the remaining space in the grid container, and the third column having a width of 20rem */
 }
